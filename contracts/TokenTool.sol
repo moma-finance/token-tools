@@ -27,6 +27,13 @@ contract TokenTool {
             balances[i] = token.balanceOf(accounts[i]);
         }
     }
+
+    function balancesOfEther(address[] calldata accounts) public view returns (uint[] memory balances) {
+        balances = new uint[](accounts.length);
+        for (uint i = 0; i < accounts.length; i++) {
+            balances[i] = accounts[i].balance;
+        }
+    }
 }
 
 
